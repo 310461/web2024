@@ -1,0 +1,113 @@
+<html>
+    <head>
+        <title>漸層及動畫</title>
+        <meta charset="UTF-8">
+        <style>
+            /*漸層*/
+            div{
+                width: 500px;
+                height: 50px;
+                margin-bottom: 10px;
+            }
+            #di{
+                background: linear-gradient(90deg,red,yellow);
+            }
+            #d2{
+                background: linear-gradient(90deg,red 35%,blue 60%);
+            }
+            #d3{
+                background: repeating-linear-gradient(45deg,red 20%,white 25%);
+            }
+            #d4{
+                background: radial-gradient(circle,rgb(242, 208, 14) 10%,white,rgb(167, 115, 18));
+                height: 100px;
+                width: 500px;
+            }
+            #d5{
+                background: repeating-radial-gradient(white 20%,gray 30%,white 40%);
+                height: 100px;
+                width: 500px;
+            }
+            #d6{
+                background: conic-gradient(red,blue,yellow,red);
+                height: 500px;
+                width: 500px;
+            }
+            #d7{
+                background: repeating-conic-gradient(white 10%,yellow 15%,white 20%);
+                height: 300px;
+            }
+            /*動畫*/
+            @keyframes k1 {
+                0% {background: linear-gradient(90deg,red,yellow);}
+                12%{ background: repeating-linear-gradient(45deg,red 20%,white 25%);}
+                25% {background: linear-gradient(90deg,red,yellow);}
+                28%{background: radial-gradient(circle,rgb(242, 208, 14) 10%,white,rgb(167, 115, 18));}
+                50% {background: linear-gradient(90deg,red,yellow);}
+                62%{background: repeating-radial-gradient(white 20%,gray 30%,white 40%);}
+                75% {background: linear-gradient(90deg,red,yellow);}
+                88% {background: repeating-conic-gradient(white 10%,yellow 15%,white 20%);}
+                100%{ background: linear-gradient(90deg,red,yellow);}
+            }
+            @keyframes k1-2 {
+                0% {background: linear-gradient(90deg,red,yellow);}
+                20% {background: linear-gradient(90deg,red,yellow);}
+                40% {background: linear-gradient(90deg,red,yellow);}
+                60% {background: linear-gradient(90deg,red,yellow);}
+                80% {background: linear-gradient(90deg,red,yellow);}
+                100% {background: linear-gradient(90deg,red,yellow);}
+            }
+           
+            #ai{
+                animation: k1-2 1s infinite linear;
+                background: linear-gradient(90deg,red,yellow);
+            }
+                @keyframes k3 {
+                0%{background: repeating-linear-gradient(45deg,red 20%,white 25%);}
+                50%{background: repeating-linear-gradient(45deg,red 20%,white 25%);}
+                100%{background: repeating-linear-gradient(45deg,red 20%,white 25%);}
+                
+            }
+            #a3{
+                animation: k3 1s,infinite linear;
+                background: repeating-linear-gradient(45deg,red 20%,white 25%);
+            }
+            @keyframes k4 {
+
+            }
+            #a4{
+                background: radial-gradient(circle,rgb(242, 208, 14) 10%,white,rgb(167, 115, 18));
+            }
+            #a5{
+                background: repeating-radial-gradient(white 20%,gray 30%,white 40%);
+            }
+            #a7{
+                background: repeating-conic-gradient(white 10%,yellow 15%,white 20%);
+            }
+            #a9{
+                background-color: blue;
+            }
+            #a9:hover{
+                width: 100px;
+                transition: width 1s;
+           }
+        </style>
+    </head>
+     <body>
+        <div id="d1"></div>
+        <div id="d2"></div>
+        <div id="d3"></div>
+        <div id="d4"></div>
+        <div id="d5"></div>
+        <div id="d6"></div>
+        <div id="d7"></div>
+        <!--動畫--><hr>
+        <div id="a1"></div>
+        <div id="a3"></div>
+        <div id="a4"></div>
+        <div id="a5"></div>
+        <div id="a7"></div>
+        <div id="a9"></div>
+
+    </body>
+</html>
