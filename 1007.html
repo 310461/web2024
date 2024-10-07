@@ -1,0 +1,80 @@
+<html>
+<head>
+    <tittle>元素的平面空間</tittle>
+    <meta charset="UTF-8">
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            border: solid 1px black;
+            margin-bottom: 30px;
+            margin: 20px 0px;
+            box-sizing: content-box;/*預設值 可不用設定*//*若用border-box則框線加內容為w500 h100*/
+           /* display: inline-block;*//*變成橫的*/
+        }
+        #d1{
+            border-width: 5px  20px ;
+            border-color: lightblue lightcyan gray lightgray;
+            border-style: solid dashed dotted double;
+        }
+        #d2{
+            border-bottom: blue dashed 3px;
+            border-top-color: lightskyblue;
+            border-radius: 10px 20px 40px 30px;
+        }
+        #d3{
+            width: 300px;
+            height: 100px;
+            border-radius: 50% 10%;/*可用百分比 也可用像素*/
+        }
+        #d4{
+            /*width: 100vw;*//*vw為百分比是相對單位 px為絕對單位*/
+            border-width: 50px;
+            border-color: transparent;
+            border-bottom-color: lightblue;
+            width: 0;
+            padding: 0px;
+            height: 0;
+            border-bottom-width: 86.6;/*大約值 使其成為正三角*/
+
+        }
+        #d5{
+            transform: rotate(30deg) translate(50px,-50px);/*rotate旋轉 角度*//*scale放大縮小 x,y*//*translate位移 x,y*/
+            border-width: 50px;
+            border-color: transparent;
+            border-bottom-color: lightblue;
+            width: 0;
+            padding: 0px;
+            height: 0;
+            border-bottom-width: 86.6;
+            /* 三角形加旋轉位移*/
+        }
+        #d6{
+            position: relative;
+            width: 50px;
+            height: 50px;
+            padding: 0;
+            /*relative 相對於原本應該在的位置*//*absolute 相對於副容器*/
+        }
+        #d6-1{
+            border-color: lightcoral;
+            width: 50px;
+            height: 50px;
+            margin: 0;
+            padding: 0;
+            position: absolute;
+            top: 30px;
+            left: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div id="d1"></div>
+    <div id="d2"></div>
+    <div id="d3"></div>
+    <div id="d4"></div>
+    <div id="d5"></div>
+    <div id="d6"></div>
+        <div id="d6-1"></div>
+</body>
+</html>
