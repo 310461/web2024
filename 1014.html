@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <title>精靈圖</title>
+        <meta charset="UTF-8">
+        <style>
+            @keyframes role1walk{
+                0%{background-position-x: 0px;}
+                100%{background-position-x: -144px;}
+            }
+            #role1{
+                background-image: url("sprite1.png");
+                width: 48px;
+                height: 72px;
+                /*還是一整張大圖只是容器小看不到全部*/
+                background-position-x: -48px;
+                animation: role1walk 0.5s steps(3) infinite;
+            }
+            #role2{
+                background-image: url("sprite1.png");
+                width: 48px;
+                height: 72px;
+                /*還是一整張大圖只是容器小看不到全部*/
+                background-position-x: -48px;
+                animation: role1walk 0.5s steps(3) infinite;
+                background-position-y: -436px;
+
+            }
+
+        </style>
+    </head>
+    <body>
+        <div id="role1"></div>
+        <div id="role2"></div>
+    </body>
+</html>
