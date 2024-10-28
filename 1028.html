@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <title>表單控制項</title>
+        <meta charset="UTF-8">
+        <script>
+            function get(id){
+                return document.getElementById(id);
+            }
+            function showRange(){
+                get("range-num").innerHTML=get("rg-font-size").value+"pt";
+                get("mytext").style.fontSize=get("rg-font-size").value+"pt";
+            }
+            function changeFontcolor(){
+                get("mytext").style.color=get("color-font").value;
+            }
+            function check(){
+                if(get("cb-text").checked){
+                    if(get("user-text").value.length>0){
+                        get("mytext").checked=false;
+                    }else{
+                        alert("你沒有輸入文字")
+                        get("cb-text").checked=false;
+                    }
+                }else{
+                    get("mytext").innerHTML="預設文字"    
+                }
+            }
+
+        </script>
+        <style>
+            input{
+                display: block;
+                margin: 5px 0;
+            }
+            #mytext{
+                font-size: 20pt;
+                color: black;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="mytext">我的文字</div>
+        <input type="text"><input type="checkbox" id="cb-text" oninput="check()">套用<br>
+        <input type="color" id="color-font" oninput="changeFontcolor()"><br>
+        <input type="range" id="rg-font-size" style="display:inline" min="6" max="100" value="20" oninput="showRange"><span id="range-num">20</span>
+  
+    </body>
+</html>
