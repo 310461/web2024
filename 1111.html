@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <title>1111上課筆記-翻牌遊戲</title>
+       <meta charset="UTF-8">
+       <style>
+
+       </style>
+       <script>
+            function get(id){
+               return document.getElementById(id);
+            }
+            function getRandNum(Min,Max){
+                return Math.floor(math.random()*(Max-Min+1))+Min;
+            }
+            function gameStart(){
+                imgs=Array.from(document.getElementsByTagName("img"));
+                ans=[1,1,2,2,3,3,4,4,5,5,6,6];
+                setTimeout(clearInterval,3000,setInterval(function(){
+                    imgs.forEach(function(o) {
+                    o.src=`pic/${getRandNum(1,6)}.png`;
+                })
+                },50))
+                setTimeout(function(){
+                    imgs.forEach(function(o){
+                        o.src="pic/0.png";
+                    })
+                },6000);
+                x1=-1;x2=-1;
+            }
+            function guess(){
+                i=imgs.indexOf(event.target);
+                imgs[i].src=`pic/${ans[i]}.png`;
+                if(x1==0){
+                    x1=i;
+                }else if(x2==0){
+                    x2=i;
+                    if(ans[x1] != ans[x2]){
+                        setTimeout(function(){
+                    })}
+                    }
+                }
+            
+
+       </script>
+    </head>
+    <body>
+        <img src="pic/0.png" onclick="guess();">
+        <img src="pic/0.png" onclick="guess();">
+        <img src="pic/0.png" onclick="guess();">
+        <img src="pic/0.png" onclick="guess();"><br>
+        <img src="pic/0.png" onclick="guess();">
+        <img src="pic/0.png" onclick="guess();">
+        <img src="pic/0.png" onclick="guess();">
+        <img src="pic/0.png" onclick="guess();"><br>
+        <img src="pic/0.png" onclick="guess();">
+        <img src="pic/0.png" onclick="guess();">
+        <img src="pic/0.png" onclick="guess();">
+        <img src="pic/0.png" onclick="guess();"><br>
+        <button onclick="gameStart()">洗牌</button>
+
+    </body>
+</html>
