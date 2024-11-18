@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <title>1118上課筆記</title>
+        <meta charset="UTF-8">
+        <style>
+            #timebar{
+                width: 800px;
+                height: 20px;
+                background-color: bisque;
+            }
+            #board{
+                height: 800px;
+                width: 800px;
+                border: 1px solid gray;
+            }
+
+        </style>
+        <script>
+             function get(id){
+               return document.getElementById(id);
+            }
+            function getRandNum(min,max){
+                return Math.floor(math.random()*(max-min+1))+min;
+            }
+            function timeCountdown(){
+                tbwidth=tbwidth-1;
+                get("timebar").style.width=tbwidth+"px";
+                if(tbwidth<=0){
+                    clearInterval(gameTimer);
+                }else if(tbwidth<100){
+                    get("timber").style.backgroundColor="red";
+                }else if(tbwidth<300){
+                    get("timebar").style.backgroundColor="orange";
+                }
+            }
+            function newTarget(){
+                var x=document.createElement("div");
+                x.className="target";
+                x.pos={x:0,y:0,w:50,h:50};
+                x.pos.w=getRandNum(30,70);
+                x.pos.h=x.pos.w;
+                x.pos.x=getRandNum(0,800-x.pos.w);
+                x.pos.y=getRandNum(0,800-x.pos.h);
+                x.style.width=x.pos.w+"px";
+            }
+            function gameStart(){
+                tbwidth=800;
+                gameTimer=setInterval(timeCountdown,100);
+            }
+        </script>
+
+    </head>
+    <body>
+        <div id="timebar"></div>
+        <div id="board"></div>
+        <button onclick="gameStart();">遊戲開始</button>
+    </body>
+</html>
