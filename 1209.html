@@ -1,0 +1,75 @@
+<html>
+    <head>
+        <title>1209上課</title>
+        <meta charset="UTF-8">
+        <style>
+            @keyframes bgmove{
+                0%{background-position-y: 0px;}
+                100%{background-position-x: 106px;}
+            }
+            #space{
+                background: url("pic/bg_stars.jpg");
+                width: 800px;
+                height: 800px;
+                animation: bgmove 5s linear infinite;
+                position: relative;
+            }
+            #ship{
+                background: url("pic/ship.png");
+                background-size: 40px 60px;
+                width: 40px;
+                height: 60px;
+                position: absolute;
+                left: 380px;
+                top: 720px;
+            }
+            .ufo{
+                background: url("pic/ufo.png");
+                background-size: 60px 40px;
+                width: 60px;
+                height: 40px;
+                position: absolute;
+                
+            }
+        </style>
+        <script>
+            function get(id){
+                return document.getElementById(id);
+            }
+            function gameInit(){
+                mykeys={"ArrowLeft":0,"ArrowRight":0}
+            }
+            function mykeydown(event){
+                event.preventDefaults();
+                if(Object.keys(mykeys).includes(event.key)){
+                    mykeys[event.key]=1;
+                }else if(event.key == " "){
+                    //shoot();
+                }
+                mykeys[event.key]=1;
+            }
+            function mykeyup(event){
+                event.preventDefaults();
+                mykeys[event.key]=0;
+                if(Object.keys(mykeys).includes(event.key)){
+                    mykeys[event.key]=0;
+                }
+            }
+            function ship_move(){
+                if(mykeys["ArrowLeft"] && ship.pos >0){
+                    ship.pos--;
+                }else if(mykeys["ArrowLeft"] && ship.pos <760){
+                    ship.pos++;
+                }
+                get("ship").style.left=ship.pos+"px";
+            }
+            
+        </script>
+    </head>
+    <body onload="gameInit();" onkeydown="mykeydown(event);" onkeyup="mykeyup(event);">
+        <div id="space">
+            <div id="ship"></div>
+           
+        </div>
+    </body>
+</html>
