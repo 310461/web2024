@@ -35,9 +35,17 @@
             submitGuess.addEventListener("click",function(){
                 const userGuess=
                 Number(guessField.value);
-                
+                if(userGuess<1||userGuess>100){
+                    messageDiv.textContent='請輸入一個1~100之間的數字';
+                    return;
+                }if(userGuess===randomNumber){
+                    messageDiv.textContent='恭喜!猜對了';
+                }else if(userGuess<randomNumber){
+                    messageDiv.textContent='太小了';
+                }else{
+                    messageDiv.textContent='太大了';
+                }
             })
-            
         </script>
     </head>
     <body>
