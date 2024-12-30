@@ -1,52 +1,28 @@
 <html>
     <head>
-        <title>115-32蔡喬茵 final game</title>
         <meta charset="UTF-8">
-        <style>/*想做小恐龍那類的*//*找一張圖片當背景*/
-            div{
-                background-image: url(pic/bg_stars.jpg);
-
-            }
-            @keyframes role1walk{
-                0%{background-position-x: 0px;}
-                100%{background-position-x: -144px;}
-            }
-            #role1{
-                background-image: url("pic/sprite1.png");
-                width: 48px;
-                height: 72px;
-                animation: role1walk 0.5s steps(3) infinite;
-            }
-            #role2{
-                background-image: url("pic/sprite1.png");
-                width: 48px;
-                height: 72px;
-                background-position-x: -48px;
-                animation: role1walk 0.5s steps(3) infinite;
-                background-position-y: -436px;
-            }
-            #role3{
-                background-image: url("pic/sprite1.png");
-                width: 48px;
-                height: 72px;
-                background-position-x: -48px;
-                animation: role1walk 0.5s steps(3) infinite;
-                background-position-y: -360px;
-            }
-        </style>
-        <script>
-           /*按空白鍵讓角色跳過障礙物*/
-           /*障礙物用仙人掌或石頭*/
-        
-        </script>
+        <title>猜數字遊戲</title>
     </head>
-    <body>
-        <div id="role1"></div>
-        <ul>
-        <ul>
-        <div id="role2" ></div>
-        <ul>
-        <ul>
-        <div id="role3"></div>
+    <script>
+        const number=Math.floor(Math.random()*100)+1;
+        function checkGuess(){
+            const guess=Number(document.getElementById('guess').value);
+            const result=document.getElementById('result');
+            if(guess===number){
+                result.textContent='恭喜!猜對了~';
+            }else if(guess<number){
+                result.textContent='太小了!再一次';
+            }else{
+                result.textContent='太大了!再試一次';
+            }
+        }
+    </script>
+   <body>
+        <h1>猜數字遊戲</h1>
+        <p>猜1個1~999之間的數字</p>
+        <input type="number" id="guess" min="1" max="999">
+        <button onclick="checkGuess()">猜</button>
+        <p id="result"></p>
     </body>
 </html>
+    
