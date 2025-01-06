@@ -37,27 +37,28 @@
                 margin-top: 20px;
             }
         </style>
-    </head>
-    <script>
-        const number=Math.floor(Math.random()*100)+1;
-        function checkGuess(){
-            const guess=Number(document.getElementById('guess').value);
-            const result=document.getElementById('result');
-            if(guess===number){
-                result.textContent='恭喜!猜對了~';
-                result.style.color='green';
-            }else if(guess<number){
-                result.textContent='太小了!再一次';
-                result.style.color='blue';
-            }else{
-                result.textContent='太大了!再試一次';
-                result.style.color='red';
+        <script>
+            const number=Math.floor(Math.random()*100)+1;
+            function checkGuess(){
+                const guess=Number(document.getElementById('guess').value);
+                const result=document.getElementById('result');
+                if(guess===number){
+                    result.textContent='恭喜!猜對了~';
+                    result.style.color='green';
+                }else if(guess<number){
+                    result.textContent='太小了!再一次';
+                    result.style.color='blue';
+                }else{
+                    result.textContent='太大了!再試一次';
+                    result.style.color='red';
+                }
             }
-        }
-    </script>
+        </script>
+    </head>
    <body>
         <h1>猜數字遊戲</h1>
-        <p>猜1個1~999之間的數字</p>
+        <p>猜1個1~999之間的數字!你有<span id="max">5</span>次機會。</p>
+        <button onclick="startGame()">開始遊戲</button>
         <input type="number" id="guess" min="1" max="999">
         <button onclick="checkGuess()">猜</button>
         <p id="result"></p>
