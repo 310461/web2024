@@ -59,9 +59,12 @@
         <h1>猜數字遊戲</h1>
         <p>猜1個1~999之間的數字!你有<span id="max">5</span>次機會。</p>
         <button onclick="startGame()">開始遊戲</button>
-        <input type="number" id="guess" min="1" max="999">
-        <button onclick="checkGuess()">猜</button>
-        <p id="result"></p>
+        <div id="game"style="display:none;">
+            <input type="number" id="guess" placeholder="輸入數字">
+            <button onclick="checkGuess()">猜</button>
+            <p id="result"></p>
+            <p id="attempts"></p>
+        </div>
     </body>
 </html>
     
