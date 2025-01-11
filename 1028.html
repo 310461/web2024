@@ -28,21 +28,25 @@
 
         </script>
         <style>
-            input{
-                display: block;
-                margin: 5px 0;
+            input {
+                margin: 5px 2px;
             }
-            #mytext{
+            #mytext {
                 font-size: 20pt;
-                color: black;
+                color:black;
+            }
+            #rand_num {
+                font-size: 48pt;
             }
         </style>
     </head>
     <body>
-        <div id="mytext">我的文字</div>
-        <input type="text"><input type="checkbox" id="cb-text" oninput="check()">套用<br>
-        <input type="color" id="color-font" oninput="changeFontcolor()"><br>
-        <input type="range" id="rg-font-size" style="display:inline" min="6" max="100" value="20" oninput="showRange"><span id="range-num">20</span>
-  
+        <div id="mytext">預設文字</div>
+        <input type="text" id="user_text"> <input type="checkbox" id="cb_text" oninput="check();">套用 <br>
+        <input type="color" id="color_font" oninput="changeFontColor();"> <br>
+        <input type="range" id="rg_font_size" min="6" max="100" value="20" oninput="changeFontSize();"><span id="range_num">20</span>
+        <hr>
+        <div id="rand_num">0</div>
+        <button onclick="getRand();">亂數</button>
     </body>
 </html>
