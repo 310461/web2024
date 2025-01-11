@@ -4,7 +4,7 @@
         <title>115-32猜數字遊戲</title>
         <style>
             body{
-                background: linear-gradient(#74ebd5, #acb6e5);
+                background: linear-gradient(#74ebd5, #acb6e5);/*線性漸層*/
                 color: #333;
                 margin: 0;
                 padding: 20px;
@@ -13,19 +13,19 @@
                 color: #007acc;
             }
             p{
-                font-size: 1.2rem;
+                font-size: 19.2px;/*文字大小*/
                 margin-bottom: 20px;
             }
             input{
                 padding: 10px;
-                font-size: 1rem;
+                font-size: 16px;
                 border: 1px solid #ccc;
-                border-radius: 4px;
+                border-radius: 4px;/*4px圓角*/
                 width: 200px;
             }
             button{
-                padding: 10px 20px;
-                font-size: 1rem;
+                padding: 10px 20px;/*上下10左右20*/
+                font-size: 16px;
                 background-color: #007acc;
                 color: white;
                 border: none;
@@ -33,34 +33,34 @@
                 margin-top: 10px;
             }
             #result{
-                font-size: 1.5rem;
+                font-size: 24px;
                 margin-top: 20px;
             }
         </style>
         <script>
-            const number=Math.floor(Math.random()*100)+1;
-            function checkGuess(){
-                const guess=Number(document.getElementById('guess').value);
+            const number=Math.floor(Math.random()*100)+1; /*生成隨機樹且存入變數*/
+            function checkGuess(){   /*檢查猜測是否正確*/
+                const guess=Number(document.getElementById('guess').value);/*Number()將字串轉為數字/document.getElementById('guess').value讀取輸入框數字*/
                 const result=document.getElementById('result');
                 if(guess===number){
-                    result.textContent='恭喜!猜對了~';
+                    result.textContent='恭喜!猜對了~';/*如果猜對 文字變綠色*/
                     result.style.color='green';
                 }else if(guess<number){
-                    result.textContent='太小了!再一次';
+                    result.textContent='太小了!再一次';/*太小則變成藍色*/
                     result.style.color='blue';
                 }else{
-                    result.textContent='太大了!再試一次';
+                    result.textContent='太大了!再試一次';/*太大則變成紅色*/
                     result.style.color='red';
                 }
             }
         </script>
     </head>
    <body>
-       <h1>猜數字遊戲</h1>
-       <p>猜1個1~999之間的數字:</p>
-       <input type="number" id="guess" min="1" max="999" placeholder="輸入數字">
-       <button onclick="checkGuess()">猜!</button>
-       <P id="result"></P>
+       <h1>猜數字遊戲</h1><!--標題-->
+       <p>猜1個1~100之間的數字:</p><!--描述-->
+       <input type="number" id="guess" min="1" max="100" placeholder="輸入數字"><!--數字輸入，placehoder顯示文字並在使用者開始輸入後消失-->
+       <button onclick="checkGuess()">猜!</button><!--按鈕-->
+       <P id="result"></P><!--結果顯示-->
     </body>
 </html>
     
